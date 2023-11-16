@@ -54,7 +54,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.gh_token }}
+          github_token: ${{ secrets.TOKEN }}
           publish_dir: docs/.vitepress/dist
 # jobs:
 #   # Build job
