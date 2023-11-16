@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@8.6.10",
   "scripts": {
     "docs": "vitepress dev docs --port 8080 --max-old-space-size=50000",
     "build": "vitepress build docs",
