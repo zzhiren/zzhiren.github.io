@@ -44,9 +44,6 @@ jobs:
           node-version: 18.x
           registry-url: https://registry.npmjs.org/
           cache: "npm"
-          
-      - name: Set Registry
-        run: npm config set registry http://registry.npmjs.org
 
       - name: Install deps
         run: npm install
