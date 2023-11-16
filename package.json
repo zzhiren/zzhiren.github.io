@@ -1,0 +1,19 @@
+{
+  "name": "zzhiren",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs --port 8080 --max-old-space-size=50000",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "lint": "eslint --cache .",
+    "lint:fix": "nr lint --fix",
+    "release": "esno scripts/release.ts",
+    "update": "esno scripts/update.ts"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.36",
+    "vue": "^3.2.45"
+  }
+}
