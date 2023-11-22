@@ -1,1 +1,0 @@
-import{_ as e,o,c as t,a}from"./app.09b4d0c2.js";const f=JSON.parse('{"title":"手册","description":"","frontmatter":{},"headers":[],"relativePath":"zh/cookbook/index.md"}'),i={name:"zh/cookbook/index.md"},r=a("",2),s=[r];function n(l,c,_,h,d,m){return o(),t("div",null,s)}const u=e(i,[["render",n]]);export{f as __pageData,u as default};
