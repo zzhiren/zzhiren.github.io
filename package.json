@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "docs": "vitepress dev docs --port 8080 --max-old-space-size=50000",
+    "docs": "vitepress dev docs --max-old-space-size=50000",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs",
     "lint": "eslint --cache .",
@@ -13,9 +13,10 @@
     "update": "esno scripts/update.ts"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.36",
-    "vue": "^3.2.45",
     "@chenfengyuan/vue-countdown": "^2.1.2",
-    "@vueuse/core": "^10.5.0"
+    "@types/node": "^20.9.1",
+    "@vueuse/core": "^10.5.0",
+    "vitepress": "1.0.0-alpha.36",
+    "vue": "^3.2.45"
   }
 }
