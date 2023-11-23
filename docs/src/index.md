@@ -1,16 +1,16 @@
 ---
 layout: home
 
-title: Pinia
+title: 🎸Guitar
 titleTemplate: The intuitive store for Vue.js
 
 hero:
-  name: Pinia
+  name: 🎸Guitar
   text: The intuitive store for Vue.js
   tagline: Type Safe, Extensible, and Modular by design. Forget you are even using a store.
   image:
     src: ./logo.svg
-    alt: Pinia
+    alt: 吉他🎸
   actions:
     - theme: brand
       text: Get Started
@@ -44,8 +44,8 @@ features:
 ---
 
 <script setup>
-import HomeSponsors from '../.vitepress/theme/components/HomeSponsors.vue'
-import '../.vitepress/theme/styles/home-links.css'
+// import HomeSponsors from '../.vitepress/theme/components/HomeSponsors.vue'
+// import '../.vitepress/theme/styles/home-links.css'
 </script>
 
-<HomeSponsors />
+<!-- <HomeSponsors /> -->

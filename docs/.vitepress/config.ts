@@ -1,14 +1,12 @@
 import { defineConfig } from 'vitepress'
-
 export default defineConfig({
-  hmr: true,
   lang: 'zh',
   vite: {
     server: {
       port: 8888,
     },
   },
-  title: 'Zzhiren',
+  title: 'Guitar',
   appearance: 'dark',
   srcDir: './src',
   assetsDir: 'static',
@@ -83,12 +81,35 @@ export default defineConfig({
 
     // ...(isProduction ? productionHead : []),
   ],
-
   themeConfig: {
     logo: '/logo.svg',
     outline: [2, 3],
     lastUpdatedText: '上次更新',
-    returnToTopLabel: '返回顶部',
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            }
+          }
+        },
+        miniSearch: {}
+      }
+    },
     // 文档页脚文本配置
     docFooter: {
       prev: '上一页',
@@ -120,19 +141,6 @@ export default defineConfig({
       // },
     ],
     sidebar: {
-      // '/api/': [
-      //   {
-      //     text: 'packages',
-      //     items: [
-      //       { text: 'pinia', link: '/api/modules/pinia.html' },
-      //       { text: '@pinia/nuxt', link: '/api/modules/pinia_nuxt.html' },
-      //       {
-      //         text: '@pinia/testing',
-      //         link: '/api/modules/pinia_testing.html',
-      //       },
-      //     ],
-      //   },
-      // ],
       '/musicscores/': [
         {
           text: '曲谱',
@@ -143,93 +151,92 @@ export default defineConfig({
         },
       ],
       // catch-all fallback
-      '/': [
-        {
-          text: 'Introduction',
-          items: [
-            {
-              text: 'What is Pinia?',
-              link: '/introduction.html',
-            },
-            {
-              text: 'Getting Started',
-              link: '/getting-started.html',
-            },
-          ],
-        },
-        {
-          text: 'Core Concepts',
-          items: [
-            { text: 'Defining a Store', link: '/core-concepts/' },
-            { text: 'State', link: '/core-concepts/state.html' },
-            { text: 'Getters', link: '/core-concepts/getters.html' },
-            { text: 'Actions', link: '/core-concepts/actions.html' },
-            { text: 'Plugins', link: '/core-concepts/plugins.html' },
-            {
-              text: 'Stores outside of components',
-              link: '/core-concepts/outside-component-usage.html',
-            },
-          ],
-        },
-        {
-          text: 'Server-Side Rendering (SSR)',
-          items: [
-            {
-              text: 'Vue and Vite',
-              link: '/ssr/',
-            },
-            {
-              text: 'Nuxt.js',
-              link: '/ssr/nuxt.html',
-            },
-          ],
-        },
-        {
-          text: 'Cookbook',
-          collapsed: false,
-          items: [
-            {
-              text: 'Index',
-              link: '/cookbook/',
-            },
-            {
-              text: 'Migration from Vuex ≤4',
-              link: '/cookbook/migration-vuex.html',
-            },
-            {
-              text: 'Hot Module Replacement',
-              link: '/cookbook/hot-module-replacement.html',
-            },
-            {
-              text: 'Testing',
-              link: '/cookbook/testing.html',
-            },
-            {
-              text: 'Usage without setup()',
-              link: '/cookbook/options-api.html',
-            },
-            {
-              text: 'Composing Stores',
-              link: '/cookbook/composing-stores.html',
-            },
-            {
-              text: 'VSCode Snippets',
-              link: '/cookbook/vscode-snippets.html',
-            },
-            {
-              text: 'Migration from v0/v1 to v2',
-              link: '/cookbook/migration-v1-v2.html',
-            },
-            {
-              text: 'Dealing with composables',
-              link: '/cookbook/composables.html',
-            },
-          ],
-        },
-      ],
+      // '/': [
+      //   {
+      //     text: 'Introduction',
+      //     items: [
+      //       {
+      //         text: 'What is Pinia?',
+      //         link: '/introduction.html',
+      //       },
+      //       {
+      //         text: 'Getting Started',
+      //         link: '/getting-started.html',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     text: 'Core Concepts',
+      //     items: [
+      //       { text: 'Defining a Store', link: '/core-concepts/' },
+      //       { text: 'State', link: '/core-concepts/state.html' },
+      //       { text: 'Getters', link: '/core-concepts/getters.html' },
+      //       { text: 'Actions', link: '/core-concepts/actions.html' },
+      //       { text: 'Plugins', link: '/core-concepts/plugins.html' },
+      //       {
+      //         text: 'Stores outside of components',
+      //         link: '/core-concepts/outside-component-usage.html',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     text: 'Server-Side Rendering (SSR)',
+      //     items: [
+      //       {
+      //         text: 'Vue and Vite',
+      //         link: '/ssr/',
+      //       },
+      //       {
+      //         text: 'Nuxt.js',
+      //         link: '/ssr/nuxt.html',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     text: 'Cookbook',
+      //     collapsed: false,
+      //     items: [
+      //       {
+      //         text: 'Index',
+      //         link: '/cookbook/',
+      //       },
+      //       {
+      //         text: 'Migration from Vuex ≤4',
+      //         link: '/cookbook/migration-vuex.html',
+      //       },
+      //       {
+      //         text: 'Hot Module Replacement',
+      //         link: '/cookbook/hot-module-replacement.html',
+      //       },
+      //       {
+      //         text: 'Testing',
+      //         link: '/cookbook/testing.html',
+      //       },
+      //       {
+      //         text: 'Usage without setup()',
+      //         link: '/cookbook/options-api.html',
+      //       },
+      //       {
+      //         text: 'Composing Stores',
+      //         link: '/cookbook/composing-stores.html',
+      //       },
+      //       {
+      //         text: 'VSCode Snippets',
+      //         link: '/cookbook/vscode-snippets.html',
+      //       },
+      //       {
+      //         text: 'Migration from v0/v1 to v2',
+      //         link: '/cookbook/migration-v1-v2.html',
+      //       },
+      //       {
+      //         text: 'Dealing with composables',
+      //         link: '/cookbook/composables.html',
+      //       },
+      //     ],
+      //   },
+      // ],
     },
     socialLinks: [
-      { icon: 'x', link: 'https://twitter.com/posva' },
       {
         icon: 'github',
         link: 'https://github.com/vuejs/pinia',
@@ -250,11 +257,11 @@ export default defineConfig({
       text: 'Suggest changes',
     },
 
-    algolia: {
-      appId: '69Y3N7LHI2',
-      apiKey: '45441f4b65a2f80329fd45c7cb371fea',
-      indexName: 'pinia',
-    },
+    // algolia: {
+    //   appId: '69Y3N7LHI2',
+    //   apiKey: '45441f4b65a2f80329fd45c7cb371fea',
+    //   indexName: 'pinia',
+    // },
 
     carbonAds: {
       code: 'CEBICK3I',

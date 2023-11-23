@@ -4,6 +4,7 @@ import DefaultTheme from 'vitepress/theme'
 import AsideSponsors from './components/AsideSponsors.vue'
 // import AsideSponsors from './components/AsideSponsors.vue'
 import './styles/vars.css'
+import './styles/index.css'
 import VueSchoolLink from './components/VueSchoolLink.vue'
 import VueMasteryLogoLink from './components/VueMasteryLogoLink.vue'
 

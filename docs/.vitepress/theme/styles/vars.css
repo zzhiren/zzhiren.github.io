@@ -114,7 +114,8 @@ html.dark .DocSearch {
   --vp-button-brand-active-border: var(--c-yellow-soft-1);
   --vp-button-brand-active-text: var(--c-black-darker);
   --vp-button-brand-active-bg: var(--vp-button-brand-bg);
-  --vp-c-brand: var(--c-yellow-1);
+  /* --vp-c-brand: var(--c-yellow-1); */
+  /* --vp-layout-max-width: 100%; */
   
 }
 
@@ -156,19 +157,33 @@ html.dark .DocSearch {
 }
 
 @media (min-width: 1440px){
-  .VPSidebar {
-    /* padding-left: max(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2));
-    width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px); */
-    padding: 32px 32px 96px!important;
+  /* .VPSidebar {
+    padding: var(--vp-nav-height) 32px!important;
     width: var(--vp-sidebar-width)!important;
   }
 
   .VPContent.has-sidebar {
-    /* padding-right: calc((100vw - var(--vp-layout-max-width)) / 2);
-    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)); */
     padding-right: 0!important;
     padding-left: var(--vp-sidebar-width)!important;
   }
+
+  .VPNavBar.has-sidebar .content {
+    padding-right: 32px!important;
+    padding-left: var(--vp-sidebar-width)!important;
+  }
+
+  .VPNavBar.has-sidebar .title {
+    padding: 0!important;
+    width: var(--vp-sidebar-width)!important;
+  }
+
+  .VPNavBarTitle.has-sidebar .title {
+    padding: 0 32px!important;
+  }
+
+  .VPNavBar.has-sidebar .curtain {
+    width: auto!important;
+  } */
 }
 
 @media (min-width: 640px) {
@@ -235,3 +250,4 @@ kbd {
   box-shadow: inset 0 -1px 0 var(--vp-c-bg-soft-mute);
   line-height: 0.95em;
 }
+
