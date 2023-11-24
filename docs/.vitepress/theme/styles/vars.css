@@ -100,6 +100,19 @@ html.dark .DocSearch {
   --docsearch-hit-active-color: var(--c-text-light-1);
 }
 
+html.dark .VPHome{
+  background-image: url("../../../public/home-bg.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 100vw;
+  /* height: 100vh; */
+  /* position: absolute; */
+  bottom: 0;
+  z-index: -1;
+  background-position:bottom center;
+  background-attachment:fixed;
+}
+
 /**
  * Component: Button
  * -------------------------------------------------------------------------- */
@@ -115,7 +128,7 @@ html.dark .DocSearch {
   --vp-button-brand-active-text: var(--c-black-darker);
   --vp-button-brand-active-bg: var(--vp-button-brand-bg);
   /* --vp-c-brand: var(--c-yellow-1); */
-  /* --vp-layout-max-width: 100%; */
+  --vp-layout-max-width: 1664px;
   
 }
 
@@ -131,11 +144,11 @@ html.dark .DocSearch {
     var(--c-green-2)
   );
   /* 首页logo背景色 */
-  /* --vp-home-hero-image-background-image: linear-gradient(
+  --vp-home-hero-image-background-image: linear-gradient(
     15deg,
-    var(--c-yellow-2) 65%,
-    var(--c-green-1) 30%
-  ); */
+    #262a44 65%,
+    #0d121b 30%
+  );
   /* --vp-home-hero-image-background-image: linear-gradient(
     15deg,
     #E74C3C 65%,
@@ -143,6 +156,18 @@ html.dark .DocSearch {
   ); */
   --vp-home-hero-image-filter: blur(0px);
 }
+/* #app::after {
+  content: '';
+  background-image: url("../../../public/home-bg.svg");
+  background-repeat: no-repeat;
+  background-position: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  border: 1px solid red;
+} */
 
 .VPHero .VPImage.image-src {
   max-height: 192px;
