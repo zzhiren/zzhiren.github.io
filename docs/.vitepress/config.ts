@@ -1,15 +1,24 @@
 import { defineConfig } from 'vitepress'
+import path from 'path'
+const sidebarTitle = '导航'
 export default defineConfig({
   lang: 'zh',
   vite: {
     server: {
       port: 8888,
     },
+    resolve: {
+      alias: {
+        "@vue/components": path.resolve(__dirname, '../.vitepress/theme/components'),
+        "@vitepress/components": path.resolve(__dirname, '../.vitepress/theme/vitepress.components.ts'),
+      }
+    },
   },
-  title: 'Guitar',
+  title: 'ZDocs',
   appearance: 'dark',
   srcDir: './src',
   assetsDir: 'static',
+
   markdown: {
     theme: {
       dark: 'dracula-soft',
@@ -83,7 +92,10 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: '/logo.svg',
-    outline: [2, 3],
+    outline: {
+      level: 'deep',
+      label: '页面导航'
+    },
     lastUpdatedText: '上次更新',
     search: {
       provider: 'local',
@@ -116,37 +128,117 @@ export default defineConfig({
       next: '下一页'
     },
     nav: [
-      { text: '曲谱', link: '/musicscores/' },
-      // { text: 'Config', link: '/config/' },
-      // { text: 'Plugins', link: '/plugins/' },
-      // {
-      //   text: '指南',
-      //   link: '/core-concepts/',
-      //   activeMatch: '^/core-concepts/',
-      // },
-      // { text: 'API', link: '/api/', activeMatch: '^/api/' },
-      // { text: '手册', link: '/cookbook/', activeMatch: '^/cookbook/' },
-      // {
-      //   text: '相关链接',
-      //   items: [
-      //     {
-      //       text: '论坛',
-      //       link: 'https://github.com/vuejs/pinia/discussions',
-      //     },
-      //     {
-      //       text: '更新日志',
-      //       link: 'https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md',
-      //     },
-      //   ],
-      // },
+      {
+        text: '基础',
+        items: [
+          { text: 'TS', link: '/docs/vue/' },
+          { text: 'JS', link: '/docs/vue/' },
+          { text: 'CSS', link: '/musicscores/' },
+          { text: 'HTML', link: '/musicscores/' },
+        ]
+      },
+      {
+        text: '框架',
+        items: [
+          {
+            text: 'Front end', items: [
+              { text: 'Vue', link: '/vue/' },
+              { text: 'React', link: '/react/' },
+              { text: 'UI Components', link: '/ui/' },
+              { text: '无界', link: '/wujie/' },
+              { text: '乾坤', link: '/qiankun/' },
+            ]
+          },
+          {
+            text: 'Server', items: [
+              { text: 'NodeJS', link: '/nodejs/' },
+              { text: 'NestJS', link: '/nestjs/' },
+              { text: 'Nginx', link: '/nginx/' },
+            ]
+          },
+        ]
+      },
+      {
+        text: '音乐',
+        items: [
+          {
+            text: '乐理',
+            items: [
+              { text: '初识乐理', link: '/musicscores/' }
+            ]
+          },
+          {
+            text: '吉他',
+            items: [
+              { text: '一级', link: '/musicscores/' }
+            ]
+          },
+        ]
+      },
+      {
+        text: '骑行',
+        link: '/cycling/'
+        // items: [
+        //   {
+        //     text: '乐理',
+        //     items: [
+        //       { text: '初识乐理', link: '/musicscores/' }
+        //     ]
+        //   },
+        //   {
+        //     text: '吉他',
+        //     items: [
+        //       { text: '一级', link: '/musicscores/' }
+        //     ]
+        //   },
+        // ]
+      },
+
     ],
     sidebar: {
+      '/Vue3/': [
+        {
+          text: '曲谱',
+          items: [
+            { text: 'Index', link: '/musicscores/' },
+            { text: '安静', link: '/musicscores/anjin.html' },
+          ],
+        },
+      ],
       '/musicscores/': [
         {
           text: '曲谱',
           items: [
             { text: 'Index', link: '/musicscores/' },
             { text: '安静', link: '/musicscores/anjin.html' },
+          ],
+        },
+      ],
+      '/vue/': [
+        {
+          text: sidebarTitle,
+          items: [
+            { text: '前言', link: '/vue/index.html' },
+            {
+              text: 'Vue3',
+              collapsed: false,
+              items: [
+                { text: '初级', link: '/vue/basic/初级.html' },
+                { text: '中级', link: '/vue/basic/中级.html' },
+                { text: '高级', link: '/vue/basic/高级.html' },
+                { text: '实践', link: '/vue/basic/实践.html' },
+              ]
+            },
+            {
+              text: '源码解析',
+              collapsed: false,
+              items: [
+                { text: 'ref', link: '/vue/sourcecode/ref.html' },
+                { text: 'reactive', link: '/vue/sourcecode/reactive.html' },
+                { text: 'computed', link: '/vue/sourcecode/computed.html' },
+                { text: 'watch', link: '/vue/sourcecode/watch.html' },
+              ]
+            },
           ],
         },
       ],
@@ -239,12 +331,12 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/vuejs/pinia',
+        link: 'https://github.com/Zzhiren',
       },
-      {
-        icon: 'discord',
-        link: 'https://chat.vuejs.org',
-      },
+      // {
+      //   icon: 'discord',
+      //   link: 'https://chat.vuejs.org',
+      // },
     ],
 
     footer: {
@@ -252,10 +344,10 @@ export default defineConfig({
       message: 'Released under the MIT License.',
     },
 
-    editLink: {
-      pattern: 'https://github.com/vuejs/pinia/edit/v2/packages/docs/:path',
-      text: 'Suggest changes',
-    },
+    // editLink: {
+    //   pattern: 'https://github.com/vuejs/pinia/edit/v2/packages/docs/:path',
+    //   text: 'Suggest changes',
+    // },
 
     // algolia: {
     //   appId: '69Y3N7LHI2',
@@ -263,10 +355,10 @@ export default defineConfig({
     //   indexName: 'pinia',
     // },
 
-    carbonAds: {
-      code: 'CEBICK3I',
-      // custom: 'CEBICK3M',
-      placement: 'routervuejsorg',
-    },
+    // carbonAds: {
+    //   code: 'CEBICK3I',
+    //   // custom: 'CEBICK3M',
+    //   placement: 'routervuejsorg',
+    // },
   },
 })

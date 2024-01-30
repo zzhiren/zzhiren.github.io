@@ -24,10 +24,13 @@
       ],
       "pinia": [
         "packages/pinia/src"
-      ]
+      ],
+      "@vue/components": ["./docs/.vitepress/theme/components"],
+      "@vue/components/*": ["./docs/.vitepress/theme/components/*"],
+      "@vitepress/components": ["./docs/.vitepress/theme/vitepress.components.ts"]
     },
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "allowJs": false,
     "skipLibCheck": true,
