@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as t,R as n}from"./chunks/framework.tv7jLUNE.js";const f=JSON.parse('{"title":"1","description":"","frontmatter":{},"headers":[],"relativePath":"music/anjin.md","filePath":"music/anjin.md"}'),o={name:"music/anjin.md"},r=n("",3),_=[r];function i(s,c,d,h,l,m){return t(),e("div",null,_)}const p=a(o,[["render",i]]);export{f as __pageData,p as default};
