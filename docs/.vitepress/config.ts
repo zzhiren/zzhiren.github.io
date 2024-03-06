@@ -178,22 +178,11 @@ export default defineConfig({
       {
         text: '骑行',
         link: '/cycling/'
-        // items: [
-        //   {
-        //     text: '乐理',
-        //     items: [
-        //       { text: '初识乐理', link: '/musicscores/' }
-        //     ]
-        //   },
-        //   {
-        //     text: '吉他',
-        //     items: [
-        //       { text: '一级', link: '/musicscores/' }
-        //     ]
-        //   },
-        // ]
       },
-
+      {
+        text: '笔记',
+        link: '/note/'
+      },
     ],
     sidebar: {
       '/Vue3/': [
@@ -237,6 +226,24 @@ export default defineConfig({
                 { text: 'reactive', link: '/vue/sourcecode/reactive.html' },
                 { text: 'computed', link: '/vue/sourcecode/computed.html' },
                 { text: 'watch', link: '/vue/sourcecode/watch.html' },
+              ]
+            },
+          ],
+        },
+      ],
+      '/note/': [
+        {
+          text: sidebarTitle,
+          items: [
+            {
+              text: '前言', link: '/note/index.html'
+            },
+            {
+              text: 'Develop',
+              collapsed: false,
+              items: [
+                { text: 'Vue', link: '/note/develop/vue.html' },
+                { text: 'Nx', link: '/note/develop/nx.html' },
               ]
             },
           ],
