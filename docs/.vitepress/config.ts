@@ -244,6 +244,7 @@ export default defineConfig({
               items: [
                 { text: 'Vue', link: '/note/develop/vue.html' },
                 { text: 'Nx', link: '/note/develop/nx.html' },
+                { text: 'Echarts', link: '/note/develop/echarts.html' },
               ]
             },
           ],
